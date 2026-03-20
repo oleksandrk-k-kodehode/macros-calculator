@@ -1,0 +1,96 @@
+* {
+  font-family: "Franklin Gothic Heavy", "Arial Narrow", Arial, sans-serif;
+  font-size: 1em;
+}
+
+h1,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+div {
+  padding: 0;
+  margin-left: 0.6em;
+  margin-right: 0.6em;
+}
+
+td {
+  border-bottom: 0.01em solid gray;
+}
+
+/* Divide standard pt by 5 */
+
+section {
+  margin: 20px;
+}
+
+.facts {
+  border: 1.5pt solid;
+  display: inline-block;
+  min-width: 30vw;
+  min-height: auto;
+}
+
+.title strong h1 {
+  font-size: 4em;
+}
+
+.title_dash {
+  border: 0.01em solid grey;
+}
+
+.serving_amount {
+  font-size: 2em;
+}
+
+.serving_size {
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.table_dash {
+  border: 0.4em solid black;
+}
+
+.main_table {
+  display: flex;
+  flex-direction: column;
+}
+
+table thead th:not(th:last-of-type),
+table tbody td:not(td:last-of-type) {
+  border-right: 0.01em solid gray;
+}
+
+th {
+  font-size: 0.7em;
+  text-align: end;
+}
+
+.dv td {
+  font-size: 0.7em;
+  text-align: end;
+}
+
+.calories td {
+  border-bottom: 0.2em solid black;
+}
+
+.dv td {
+  font-size: 0.7em;
+  text-align: end;
+}
+
+.protein td {
+  border-bottom: 0.4em solid black;
+}
+
+.comment_dash {
+  border: 0.2em solid black;
+}
+
+.star_comments {
+}
