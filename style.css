@@ -21,6 +21,11 @@ td {
 
 /* Divide standard pt by 5 */
 
+header {
+  padding: 1em;
+}
+
+header,
 section {
   margin: 20px;
 }
@@ -28,8 +33,8 @@ section {
 .facts {
   border: 1.5pt solid;
   display: inline-block;
-  min-width: 30vw;
-  min-height: auto;
+  width: 33em;
+  height: auto;
 }
 
 .title strong h1 {
@@ -93,4 +98,19 @@ th {
 }
 
 .star_comments {
+}
+
+input[type="radio"] {
+  accent-color: black;
+}
+header,
+fieldset {
+  border: 1.5pt solid;
+}
+
+#facts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

@@ -19,6 +19,89 @@
     </header>
 
     <main>
+      <section class="info_form">
+        <form>
+          <fieldset>
+            <legend>What's your age? (years.)</legend>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              placeholder="ex. 25"
+            /><label for="age"></label>
+          </fieldset>
+          <br />
+          <fieldset>
+            <legend>What's your height? (cm.)</legend>
+            <input
+              type="number"
+              id="height"
+              name="height"
+              placeholder="ex. 185"
+            /><label for="height"></label>
+          </fieldset>
+          <br />
+          <fieldset>
+            <legend>What's your weight? (kg.)</legend>
+            <input
+              type="number"
+              id="weight"
+              name="weight"
+              placeholder="ex. 90"
+            /><label for="weight"></label>
+          </fieldset>
+          <br />
+          <fieldset>
+            <legend>You're activity activity level? (choose one below)</legend>
+            <input
+              type="radio"
+              id="low"
+              name="activity_level"
+              value="low"
+            /><label for="low">Low</label><br />
+            <input
+              type="radio"
+              id="medium"
+              name="activity_level"
+              value="medium"
+              checked
+            /><label for="medium">Medium</label><br />
+            <input
+              type="radio"
+              id="high"
+              name="activity_level"
+              value="high"
+            /><label for="high">High</label><br />
+            <input
+              type="radio"
+              id="insane"
+              name="activity_level"
+              value="insane"
+            /><label for="insane">Insane</label>
+          </fieldset>
+          <br />
+          <fieldset>
+            <legend>What's your goal? (choose one below)</legend>
+            <input type="radio" id="lose" name="goals" value="lose" /><label
+              for="lose"
+              >Lose</label
+            >
+            <input
+              type="radio"
+              id="maintain"
+              name="goals"
+              value="maintain"
+              checked
+            /><label for="maintain">Maintain</label>
+            <input type="radio" id="gain" name="goals" value="gain" /><label
+              for="gain"
+              >Gain</label
+            >
+          </fieldset>
+          <br />
+        </form>
+      </section>
+
       <section id="facts">
         <div class="facts">
           <div class="title">
@@ -128,7 +211,17 @@
           </div>
           <div class="comment_dash"></div>
           <div class="star_comments">
-            <p>* Some important info idk (like tips or lifehacks).</p>
+            <p>
+              * Remember that this calculator is biased and doesn't work for
+              everyone.
+            </p>
+            <p>
+              It's an aproximate calculator that is created to help you choose
+            </p>
+            <p>
+              the vector of your movement, in achieving your final destination
+              in your fitness journey.
+            </p>
           </div>
         </div>
       </section>
