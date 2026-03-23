@@ -4,8 +4,9 @@ form.addEventListener("input", update_data);
 form.addEventListener("change", update_data);
 
 function update_data() {
-  const data = new FormData(form);
-  const obj = Object.fromEntries(data.entries());
+  let data = new FormData(form);
+  let obj = Object.fromEntries(data.entries());
+  console.log(obj);
   return obj;
 }
 
@@ -15,11 +16,13 @@ function bmr(sex, age, height, weight) {
   // A = age (years)
 
   // BMR=10W+6.25H−5A+5
-  if ((sex = man)) {
+  if (sex == man) {
+    console.log(10 * weight + 6.25 * height - 5 * age + 5);
     return 10 * weight + 6.25 * height - 5 * age + 5;
   }
   // BMR=10W+6.25H−5A−161
   else {
+    console.log(10 * weight + 6.25 * height - 5 * age - 161);
     return 10 * weight + 6.25 * height - 5 * age - 161;
   }
 }
@@ -33,4 +36,24 @@ function tdee(bmr, activity) {
     Very active (6–7 days/week): × 1.725
     Athlete/manual labor: × 1.9
   */
+
+  let act_coef = {
+    sedentary: 1.2,
+    light_activity: 1.375,
+    moderate: 1.55,
+    very_active: 1.725,
+    athlete: 1.9,
+  };
+  console.log(bmr * act_coef[activity]);
+  return bmr * act_coef[activity];
 }
+
+var bmr_value = bmr(
+  update_data[sex],
+  update_data[age],
+  update_data[height],
+  update_data[weight],
+);
+var tdee_value = tdee(bmr_value, update_data[activity_level]);
+
+document.getElementById("calories_nom").textContent = tdee_value;
