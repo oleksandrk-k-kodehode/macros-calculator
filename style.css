@@ -35,6 +35,7 @@ section {
   display: inline-block;
   width: 33em;
   height: auto;
+  margin: 0.7em;
 }
 
 .title strong h1 {
