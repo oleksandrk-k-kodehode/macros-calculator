@@ -59,32 +59,54 @@
           </fieldset>
           <br />
           <fieldset>
+            <legend>What's your sex? (choose one below)</legend>
+            <input type="radio" id="man" name="sex" value="man" checked/><label
+              for="man"
+              >Man</label
+            >
+            <input
+              type="radio"
+              id="woman"
+              name="sex"
+              value="woman"
+            /><label for="woman">Woman</label>
+            
+          </fieldset>
+          <br>
+          <fieldset>
             <legend>You're activity activity level? (choose one below)</legend>
             <input
               type="radio"
-              id="low"
+              id="sedentary"
               name="activity_level"
-              value="low"
-            /><label for="low">Low</label><br />
+              value="sedentary"
+            /><label for="sedentary">Sedentary (little/no exercise)</label><br />
             <input
               type="radio"
-              id="medium"
+              id="light_activity"
               name="activity_level"
-              value="medium"
+              value="light_activity"
               checked
-            /><label for="medium">Medium</label><br />
+            /><label for="light_activity">Light activity (1–3 days/week)</label><br />
             <input
               type="radio"
-              id="high"
+              id="moderate"
               name="activity_level"
-              value="high"
-            /><label for="high">High</label><br />
+              value="moderate"
+            /><label for="moderate">Moderate (3–5 days/week)</label><br />
             <input
               type="radio"
-              id="insane"
+              id="very_active"
               name="activity_level"
-              value="insane"
-            /><label for="insane">Insane</label>
+              value="very_active"
+            /><label for="very_active">Very active (6–7 days/week)</label><br />
+            
+            <input
+              type="radio"
+              id="athlete"
+              name="activity_level"
+              value="athlete"
+            /><label for="athlete">Athlete/manual labor</label>
           </fieldset>
           <br />
           <fieldset>
