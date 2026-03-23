@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./samples/food-tray-icon.ico" type="image/x-icon">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nutrience calculator</title>
@@ -20,14 +21,16 @@
 
     <main>
       <section class="info_form">
-        <form>
+        <form id="my_form">
           <fieldset>
             <legend>What's your age? (years.)</legend>
             <input
               type="number"
               id="age"
               name="age"
+              min="1"
               placeholder="ex. 25"
+              required
             /><label for="age"></label>
           </fieldset>
           <br />
@@ -38,6 +41,8 @@
               id="height"
               name="height"
               placeholder="ex. 185"
+              min="1"
+              required
             /><label for="height"></label>
           </fieldset>
           <br />
@@ -48,6 +53,8 @@
               id="weight"
               name="weight"
               placeholder="ex. 90"
+              min="1"
+              required
             /><label for="weight"></label>
           </fieldset>
           <br />
