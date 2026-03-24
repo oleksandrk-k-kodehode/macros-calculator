@@ -16,7 +16,7 @@ function bmr(sex, age, height, weight) {
   // A = age (years)
 
   // BMR=10W+6.25H−5A+5
-  if (sex == man) {
+  if (sex == "man") {
     console.log(10 * weight + 6.25 * height - 5 * age + 5);
     return 10 * weight + 6.25 * height - 5 * age + 5;
   }
@@ -48,12 +48,16 @@ function tdee(bmr, activity) {
   return bmr * act_coef[activity];
 }
 
-var bmr_value = bmr(
-  update_data[sex],
-  update_data[age],
-  update_data[height],
-  update_data[weight],
-);
-var tdee_value = tdee(bmr_value, update_data[activity_level]);
+function main() {
+  let input_data = update_data();
+  let bmr_value = bmr(
+    input_data.sex,
+    input_data.age,
+    input_data.height,
+    input_data.weight,
+  );
+  let tdee_value = tdee(bmr_value, input_data.activity_level);
 
-document.getElementById("calories_nom").textContent = tdee_value;
+  document.getElementById("calories_nom").textContent = tdee_value;
+}
+main();
