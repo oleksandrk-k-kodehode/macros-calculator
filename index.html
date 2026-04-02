@@ -1,260 +1,305 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="./samples/food-tray-icon.ico" type="image/x-icon" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nutrience calculator</title>
-  </head>
-  <body>
-    <header>
-      <h1>Nutrition calculator</h1>
-      <br />
-      <p>
-        This app is designed to help you figure out your dose of daily
-        nutrience.
-      </p>
-      <br />
-      <p>Such as: proteins, carbs, fats and fibers.</p>
-    </header>
-
-    <main>
-      <section class="info_form">
-        <form id="my_form">
-          <fieldset>
-            <legend>What's your age? (years.)</legend>
-            <input
-              type="number"
-              id="age"
-              name="age"
-              min="1"
-              placeholder="ex. 25"
-              required
-            /><label for="age"></label>
-          </fieldset>
-          <br />
-          <fieldset>
-            <legend>What's your height? (cm.)</legend>
-            <input
-              type="number"
-              id="height"
-              name="height"
-              placeholder="ex. 185"
-              min="1"
-              required
-            /><label for="height"></label>
-          </fieldset>
-          <br />
-          <fieldset>
-            <legend>What's your weight? (kg.)</legend>
-            <input
-              type="number"
-              id="weight"
-              name="weight"
-              placeholder="ex. 90"
-              min="1"
-              required
-            /><label for="weight"></label>
-          </fieldset>
-          <br />
-          <fieldset>
-            <legend>What's your sex? (choose one below)</legend>
-            <input type="radio" id="man" name="sex" value="man" /><label
-              for="man"
-              >Man</label
-            ><br />
-            <input
-              type="radio"
-              id="woman"
-              name="sex"
-              value="woman"
-              checked
-            /><label for="woman">Woman</label>
-          </fieldset>
-          <br />
-          <fieldset>
-            <legend>You're activity activity level? (choose one below)</legend>
-            <input
-              type="radio"
-              id="sedentary"
-              name="activity_level"
-              value="sedentary"
-            /><label for="sedentary">Sedentary (little/no exercise)</label
-            ><br />
-            <input
-              type="radio"
-              id="light_activity"
-              name="activity_level"
-              value="light_activity"
-              checked
-            /><label for="light_activity">Light activity (1–3 days/week)</label
-            ><br />
-            <input
-              type="radio"
-              id="moderate"
-              name="activity_level"
-              value="moderate"
-            /><label for="moderate">Moderate (3–5 days/week)</label><br />
-            <input
-              type="radio"
-              id="very_active"
-              name="activity_level"
-              value="very_active"
-            /><label for="very_active">Very active (6–7 days/week)</label><br />
-
-            <input
-              type="radio"
-              id="athlete"
-              name="activity_level"
-              value="athlete"
-            /><label for="athlete">Athlete/manual labor</label>
-          </fieldset>
-          <br />
-          <fieldset>
-            <legend>What's your goal? (choose one below)</legend>
-            <input type="radio" id="lose" name="goal" value="lose" /><label
-              for="lose"
-              >Lose</label
-            >
-            <input
-              type="radio"
-              id="maintain"
-              name="goal"
-              value="maintain"
-              checked
-            /><label for="maintain">Maintain</label>
-            <input type="radio" id="gain" name="goal" value="gain" /><label
-              for="gain"
-              >Gain</label
-            >
-          </fieldset>
-          <br />
-        </form>
-      </section>
-
-      <script src="calc_logic.js"></script>
-
-      <section id="facts">
-        <div class="facts">
-          <div class="title">
-            <strong><h1>Nutrition Facts</h1></strong>
-          </div>
-          <div class="title_dash"></div>
-          <div class="serving_amount">
-            <p class="placeholder">3 meals per day</p>
-          </div>
-          <div class="serving_size">
-            <p class="placeholder_l">Meal ratio</p>
-            <p class="placeholder_r">1 Meal (~ 30 minutes)</p>
-          </div>
-          <div class="table_dash"></div>
-          <div class="main_table">
-            <table>
-              <thead>
-                <th></th>
-                <th>Per meal</th>
-                <th>Per day</th>
-              </thead>
-              <tbody>
-                <tr class="calories">
-                  <td id="calories">Calories</td>
-                  <td id="calories_per"></td>
-                  <td id="calories_nom"></td>
-                </tr>
-                <tr class="dv">
-                  <td></td>
-                  <td>*DV%</td>
-                  <td>*DV%</td>
-                </tr>
-                <tr class="total_fat">
-                  <td id="total_fat">Total Fat</td>
-                  <td id="total_fat_per"></td>
-                  <td id="total_fat_nom"></td>
-                </tr>
-                <tr class="saturated_fat">
-                  <td id="saturated_fat">&nbsp;&nbsp;Saturated Fat</td>
-                  <td id="saturated_fat_per"></td>
-                  <td id="saturated_fat_nom"></td>
-                </tr>
-                <tr class="trans_fat">
-                  <td id="trans_fat">&nbsp;&nbsp;Trans. Fat</td>
-                  <td id="trans_fat_per"></td>
-                  <td id="trans_fat_nom"></td>
-                </tr>
-                <tr class="cholesterol">
-                  <td id="cholesterol">Cholesterol</td>
-                  <td id="cholesterol_per"></td>
-                  <td id="cholesterol_nom"></td>
-                </tr>
-                <tr class="sodium">
-                  <td id="sodium">Sodium</td>
-                  <td id="sodium_per"></td>
-                  <td id="sodium_nom"></td>
-                </tr>
-                <tr class="total_carb">
-                  <td id="total_carb">Total Carbs.</td>
-                  <td id="total_carb_per"></td>
-                  <td id="total_carb_nom"></td>
-                </tr>
-                <tr class="dietary_fiber">
-                  <td id="dietary_fiber">&nbsp;&nbsp;Dietary Fibers</td>
-                  <td id="dietary_fiber_per"></td>
-                  <td id="dietary_fiber_nom"></td>
-                </tr>
-                <tr class="total_sugars">
-                  <td id="total_sugars">&nbsp;&nbsp;Total Sugars</td>
-                  <td id="total_sugars_per"></td>
-                  <td id="total_sugars_nom"></td>
-                </tr>
-                <tr class="inc_add_sugars">
-                  <td id="inc_add_sugars">
-                    &nbsp;&nbsp;&nbsp;&nbsp;Incl. Added Sugars
-                  </td>
-                  <td id="inc_add_sugars_per"></td>
-                  <td id="inc_add_sugars_nom"></td>
-                </tr>
-                <tr class="protein">
-                  <td id="protein">Protein</td>
-                  <td id="protein_per"></td>
-                  <td id="protein_nom"></td>
-                </tr>
-                <tr class="vitamin_d">
-                  <td id="vitamin_d">Vitamin D</td>
-                  <td id="vitamin_d_per"></td>
-                  <td id="vitamin_d_nom"></td>
-                </tr>
-                <tr class="calcium">
-                  <td id="calcium">Calcium</td>
-                  <td id="calcium_per"></td>
-                  <td id="calcium_nom"></td>
-                </tr>
-                <tr class="iron">
-                  <td id="iron">Iron</td>
-                  <td id="iron_per"></td>
-                  <td id="iron_nom"></td>
-                </tr>
-                <tr class="potassium">
-                  <td id="potassium">Potassium</td>
-                  <td id="potassium_per"></td>
-                  <td id="potassium_nom"></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="comment_dash"></div>
-          <div class="star_comments">
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="icon"
+            href="./samples/food-tray-icon.ico"
+            type="image/x-icon"
+        />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nutrience calculator</title>
+    </head>
+    <body>
+        <header>
+            <h1>Nutrition calculator</h1>
+            <br />
             <p>
-              <span>* These are estimates, not exact numbers.</span><br />
-              <span>Track progress and adjust every 2–3 weeks.</span><br />
-              <span>Sleep, training, and consistency matter just as much.</span
-              ><br />
+                This app is designed to help you figure out your dose of daily
+                nutrience.
             </p>
-          </div>
-        </div>
-      </section>
-    </main>
+            <br />
+            <p>Such as: proteins, carbs, fats and fibers.</p>
+        </header>
 
-    <footer></footer>
-  </body>
+        <main>
+            <section class="info_form">
+                <form id="my_form">
+                    <fieldset>
+                        <legend>What's your age? (years.)</legend>
+                        <input
+                            type="number"
+                            id="age"
+                            name="age"
+                            min="1"
+                            placeholder="ex. 25"
+                            required
+                            oninput="main()"
+                        /><label for="age"></label>
+                    </fieldset>
+                    <br />
+                    <fieldset>
+                        <legend>What's your height? (cm.)</legend>
+                        <input
+                            type="number"
+                            id="height"
+                            name="height"
+                            placeholder="ex. 185"
+                            min="1"
+                            required
+                            oninput="main()"
+                        /><label for="height"></label>
+                    </fieldset>
+                    <br />
+                    <fieldset>
+                        <legend>What's your weight? (kg.)</legend>
+                        <input
+                            type="number"
+                            id="weight"
+                            name="weight"
+                            placeholder="ex. 90"
+                            min="1"
+                            required
+                            oninput="main()"
+                        /><label for="weight"></label>
+                    </fieldset>
+                    <br />
+                    <fieldset>
+                        <legend>What's your sex? (choose one below)</legend>
+                        <input
+                            type="radio"
+                            id="man"
+                            name="sex"
+                            value="man"
+                            oninput="main()"
+                        /><label for="man">Man</label><br />
+                        <input
+                            type="radio"
+                            id="woman"
+                            name="sex"
+                            value="woman"
+                            checked
+                            oninput="main()"
+                        /><label for="woman">Woman</label>
+                    </fieldset>
+                    <br />
+                    <fieldset>
+                        <legend>
+                            You're activity activity level? (choose one below)
+                        </legend>
+                        <input
+                            type="radio"
+                            id="sedentary"
+                            name="activity_level"
+                            value="sedentary"
+                            oninput="main()"
+                        /><label for="sedentary"
+                            >Sedentary (little/no exercise)</label
+                        ><br />
+                        <input
+                            type="radio"
+                            id="light_activity"
+                            name="activity_level"
+                            value="light_activity"
+                            checked
+                            oninput="main()"
+                        /><label for="light_activity"
+                            >Light activity (1–3 days/week)</label
+                        ><br />
+                        <input
+                            type="radio"
+                            id="moderate"
+                            name="activity_level"
+                            value="moderate"
+                            oninput="main()"
+                        /><label for="moderate">Moderate (3–5 days/week)</label
+                        ><br />
+                        <input
+                            type="radio"
+                            id="very_active"
+                            name="activity_level"
+                            value="very_active"
+                            oninput="main()"
+                        /><label for="very_active"
+                            >Very active (6–7 days/week)</label
+                        ><br />
+
+                        <input
+                            type="radio"
+                            id="athlete"
+                            name="activity_level"
+                            value="athlete"
+                            oninput="main()"
+                        /><label for="athlete">Athlete/manual labor</label>
+                    </fieldset>
+                    <br />
+                    <fieldset>
+                        <legend>What's your goal? (choose one below)</legend>
+                        <input
+                            type="radio"
+                            id="lose"
+                            name="goal"
+                            value="lose"
+                            oninput="main()"
+                        /><label for="lose">Lose</label>
+                        <input
+                            type="radio"
+                            id="maintain"
+                            name="goal"
+                            value="maintain"
+                            checked
+                            oninput="main()"
+                        /><label for="maintain">Maintain</label>
+                        <input
+                            type="radio"
+                            id="gain"
+                            name="goal"
+                            value="gain"
+                            oninput="main()"
+                        /><label for="gain">Gain</label>
+                    </fieldset>
+                    <br />
+                </form>
+            </section>
+
+            <section id="facts">
+                <div class="facts">
+                    <div class="title">
+                        <strong><h1>Nutrition Facts</h1></strong>
+                    </div>
+                    <div class="title_dash"></div>
+                    <div class="serving_amount">
+                        <p class="placeholder">3 meals per day</p>
+                    </div>
+                    <div class="serving_size">
+                        <p class="placeholder_l">Meal ratio</p>
+                        <p class="placeholder_r">1 Meal (~ 30 minutes)</p>
+                    </div>
+                    <div class="table_dash"></div>
+                    <div class="main_table">
+                        <table>
+                            <thead>
+                                <th></th>
+                                <th>Per meal</th>
+                                <th>Per day</th>
+                            </thead>
+                            <tbody>
+                                <tr class="calories">
+                                    <td id="calories">Calories</td>
+                                    <td id="calories_per"></td>
+                                    <td id="calories_nom"></td>
+                                </tr>
+                                <tr class="dv">
+                                    <td></td>
+                                    <td>*DV%</td>
+                                    <td>*DV%</td>
+                                </tr>
+                                <tr class="total_fat">
+                                    <td id="total_fat">Total Fat</td>
+                                    <td id="total_fat_per"></td>
+                                    <td id="total_fat_nom"></td>
+                                </tr>
+                                <tr class="saturated_fat">
+                                    <td id="saturated_fat">
+                                        &nbsp;&nbsp;Saturated Fat
+                                    </td>
+                                    <td id="saturated_fat_per"></td>
+                                    <td id="saturated_fat_nom"></td>
+                                </tr>
+                                <tr class="trans_fat">
+                                    <td id="trans_fat">
+                                        &nbsp;&nbsp;Trans. Fat
+                                    </td>
+                                    <td id="trans_fat_per"></td>
+                                    <td id="trans_fat_nom"></td>
+                                </tr>
+                                <tr class="cholesterol">
+                                    <td id="cholesterol">Cholesterol</td>
+                                    <td id="cholesterol_per"></td>
+                                    <td id="cholesterol_nom"></td>
+                                </tr>
+                                <tr class="sodium">
+                                    <td id="sodium">Sodium</td>
+                                    <td id="sodium_per"></td>
+                                    <td id="sodium_nom"></td>
+                                </tr>
+                                <tr class="total_carb">
+                                    <td id="total_carb">Total Carbs.</td>
+                                    <td id="total_carb_per"></td>
+                                    <td id="total_carb_nom"></td>
+                                </tr>
+                                <tr class="dietary_fiber">
+                                    <td id="dietary_fiber">
+                                        &nbsp;&nbsp;Dietary Fibers
+                                    </td>
+                                    <td id="dietary_fiber_per"></td>
+                                    <td id="dietary_fiber_nom"></td>
+                                </tr>
+                                <tr class="total_sugars">
+                                    <td id="total_sugars">
+                                        &nbsp;&nbsp;Total Sugars
+                                    </td>
+                                    <td id="total_sugars_per"></td>
+                                    <td id="total_sugars_nom"></td>
+                                </tr>
+                                <tr class="inc_add_sugars">
+                                    <td id="inc_add_sugars">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Incl. Added
+                                        Sugars
+                                    </td>
+                                    <td id="inc_add_sugars_per"></td>
+                                    <td id="inc_add_sugars_nom"></td>
+                                </tr>
+                                <tr class="protein">
+                                    <td id="protein">Protein</td>
+                                    <td id="protein_per"></td>
+                                    <td id="protein_nom"></td>
+                                </tr>
+                                <tr class="vitamin_d">
+                                    <td id="vitamin_d">Vitamin D</td>
+                                    <td id="vitamin_d_per"></td>
+                                    <td id="vitamin_d_nom"></td>
+                                </tr>
+                                <tr class="calcium">
+                                    <td id="calcium">Calcium</td>
+                                    <td id="calcium_per"></td>
+                                    <td id="calcium_nom"></td>
+                                </tr>
+                                <tr class="iron">
+                                    <td id="iron">Iron</td>
+                                    <td id="iron_per"></td>
+                                    <td id="iron_nom"></td>
+                                </tr>
+                                <tr class="potassium">
+                                    <td id="potassium">Potassium</td>
+                                    <td id="potassium_per"></td>
+                                    <td id="potassium_nom"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="comment_dash"></div>
+                    <div class="star_comments">
+                        <p>
+                            <span
+                                >* These are estimates, not exact numbers.</span
+                            ><br />
+                            <span
+                                >Track progress and adjust every 2–3
+                                weeks.</span
+                            ><br />
+                            <span
+                                >Sleep, training, and consistency matter just as
+                                much.</span
+                            ><br />
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <script src="calc_logic.js"></script>
+        </main>
+
+        <footer></footer>
+    </body>
 </html>

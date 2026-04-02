@@ -4,32 +4,32 @@ form.addEventListener("input", update_data);
 form.addEventListener("change", update_data);
 
 function update_data() {
-  let data = new FormData(form);
-  let obj = Object.fromEntries(data.entries());
-  console.log(obj);
-  return obj;
+    let data = new FormData(form);
+    let obj = Object.fromEntries(data.entries());
+    console.log(obj);
+    return obj;
 }
 
 function bmr(sex, age, height, weight) {
-  // W = weight (kg)
-  // H = height (cm)
-  // A = age (years)
+    // W = weight (kg)
+    // H = height (cm)
+    // A = age (years)
 
-  // BMR=10W+6.25H−5A+5
-  if (sex == "man") {
-    console.log(10 * weight + 6.25 * height - 5 * age + 5);
-    return 10 * weight + 6.25 * height - 5 * age + 5;
-  }
-  // BMR=10W+6.25H−5A−161
-  else {
-    console.log(10 * weight + 6.25 * height - 5 * age - 161);
-    return 10 * weight + 6.25 * height - 5 * age - 161;
-  }
+    // BMR=10W+6.25H−5A+5
+    if (sex == "man") {
+        console.log(10 * weight + 6.25 * height - 5 * age + 5);
+        return 10 * weight + 6.25 * height - 5 * age + 5;
+    }
+    // BMR=10W+6.25H−5A−161
+    else {
+        console.log(10 * weight + 6.25 * height - 5 * age - 161);
+        return 10 * weight + 6.25 * height - 5 * age - 161;
+    }
 }
 
 function tdee(bmr, activity) {
-  // TDEE=BMR×Activity Level
-  /*
+    // TDEE=BMR×Activity Level
+    /*
     Sedentary (little/no exercise): × 1.2
     Light activity (1–3 days/week): × 1.375
     Moderate (3–5 days/week): × 1.55
@@ -37,27 +37,31 @@ function tdee(bmr, activity) {
     Athlete/manual labor: × 1.9
   */
 
-  let act_coef = {
-    sedentary: 1.2,
-    light_activity: 1.375,
-    moderate: 1.55,
-    very_active: 1.725,
-    athlete: 1.9,
-  };
-  console.log(bmr * act_coef[activity]);
-  return bmr * act_coef[activity];
+    let act_coef = {
+        sedentary: 1.2,
+        light_activity: 1.375,
+        moderate: 1.55,
+        very_active: 1.725,
+        athlete: 1.9,
+    };
+    console.log(bmr * act_coef[activity]);
+    return bmr * act_coef[activity];
 }
 
 function main() {
-  let input_data = update_data();
-  let bmr_value = bmr(
-    input_data.sex,
-    input_data.age,
-    input_data.height,
-    input_data.weight,
-  );
-  let tdee_value = tdee(bmr_value, input_data.activity_level);
+    let input_data = update_data();
+    let bmr_value = bmr(
+        input_data.sex,
+        input_data.age,
+        input_data.height,
+        input_data.weight,
+    );
+    let tdee_value = tdee(bmr_value, input_data.activity_level);
 
-  document.getElementById("calories_nom").textContent = tdee_value;
+    document.getElementById("calories_nom").textContent =
+        Math.round(tdee_value);
+    document.getElementById("calories_per").textContent = Math.round(
+        tdee_value / 3,
+    );
 }
 main();
