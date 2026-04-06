@@ -3,6 +3,14 @@ const form = document.getElementById("my_form");
 form.addEventListener("input", update_data);
 form.addEventListener("change", update_data);
 
+var activity_dicct = {};
+
+var goal_dict = {
+    gain: 450,
+    maintain: 0,
+    lose: -450,
+};
+
 function update_data() {
     let data = new FormData(form);
     let obj = Object.fromEntries(data.entries());
@@ -57,6 +65,8 @@ function main() {
         input_data.weight,
     );
     let tdee_value = tdee(bmr_value, input_data.activity_level);
+    let goal = input_data.goal;
+    let live = input_data.activity_level;
 
     document.getElementById("calories_nom").textContent =
         Math.round(tdee_value);
