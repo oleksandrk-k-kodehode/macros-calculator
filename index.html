@@ -10,6 +10,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Nutrience calculator</title>
+        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     </head>
     <body>
         <header>
@@ -298,6 +299,21 @@
             <script src="calc_logic.js"></script>
         </main>
 
-        <footer></footer>
+        <footer>
+            <script>
+                function download_table() {
+                    const table = document.getElementById("facts");
+
+                    html2canvas(table, { scale: 2 }).then((canvas) => {
+                        // Convert canvas to image
+                        const link = document.createElement("a");
+                        link.download = "table.png";
+                        link.href = canvas.toDataURL("image/png");
+                        link.click();
+                    });
+                }
+            </script>
+            <button onclick="download_table()">Download</button>
+        </footer>
     </body>
 </html>
