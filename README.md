@@ -86,15 +86,6 @@ macros-calculator/
 
 ---
 
-## 🎯 Future Improvements
-
-- Custom macro ratio selection
-- Save user preferences
-- Dark mode
-- Integration with fitness APIs
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome!
@@ -114,9 +105,7 @@ This project is open source and available under the **MIT License**.
 
 ## 👨‍💻 Author
 
-Developed by Oleksandr K
+Developed by Oleksandr
 Part of the Kodehode learning program 🚀
 
 ---
-
-[1]: https://github.com/josswe26/macro-calculator?utm_source=chatgpt.com "josswe26/macro-calculator: A Python macronutrient ..."
