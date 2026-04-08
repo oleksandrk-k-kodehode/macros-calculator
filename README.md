@@ -105,7 +105,6 @@ This project is open source and available under the **MIT License**.
 
 ## 👨‍💻 Author
 
-Developed by Oleksandr
-Part of the Kodehode learning program 🚀
+Developed by Oleksandr as pet-project at the Kodehode learning program 🚀
 
 ---
